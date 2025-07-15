@@ -4,7 +4,6 @@ class ListNode:
         self.val = val
         self.nxt = nxt
 
-
 # Helper functions
 def list_to_linked_list(l):
     prev = None
@@ -13,6 +12,13 @@ def list_to_linked_list(l):
         del l[-1]
 
     return prev
+
+def print_linked_list(l):
+    curr = l
+    while curr != None:
+        print(curr.val, end=" ")
+        curr = curr.nxt
+    print(" ")
 
 
 # Test functions
