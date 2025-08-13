@@ -7,6 +7,15 @@ class ListNode:
     def __repr__(self):
         return f"<ListNode ({self.val}) -> {self.nxt}>"
 
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def __repr__(self):
+        return f"<TreeNode ({self.val}) -> [{self.left}, {self.right}]>"
+
 # Helper functions
 def list_to_linked_list(l):
     prev = None
@@ -53,7 +62,10 @@ def assert_eq(a, b):
         return False
 
 def lc_test(n, a, b):
-    print(f"Test {n}: {'Passed' if assert_eq(a, b) else 'Failed'}")
+    if assert_eq(a, b):
+        print(f"Test {n}: Passed")
+    else:
+        print(f"Test {n}: Failed | Expected {b}, received {a}")
 
 
 
