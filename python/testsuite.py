@@ -14,7 +14,7 @@ class TreeNode:
         self.right = right
 
     def __repr__(self):
-        return f"<TreeNode ({self.val}) -> [{self.left}, {self.right}]>"
+        return f"<TreeNode ({self.val}) -> [{self.left.val if self.left else 'None'}, {self.right.val if self.right else 'None'}]>"
 
 # Helper functions
 def list_to_linked_list(l):
