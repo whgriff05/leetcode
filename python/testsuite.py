@@ -16,6 +16,22 @@ class TreeNode:
     def __repr__(self):
         return f"<TreeNode ({self.val}) -> [{self.left.val if self.left else 'None'}, {self.right.val if self.right else 'None'}]>"
 
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+
+    def __repr__(self):
+        output = f"<Node ({self.val}) -> ["
+        if self.children:
+            for i in range(len(self.children) - 1):
+                output += f"{self.children[i].val if self.children[i] else 'None'}, "
+            output += f"{self.children[-1].val if self.children[-1] else 'None'}"
+        output += "]>"
+        return output
+        
+        
+
 # Helper functions
 def list_to_linked_list(l):
     prev = None
@@ -50,10 +66,12 @@ def assert_eq(a, b):
         a = alist
         b = blist
 
+    '''Confused why this was here
     # Comparing Lists
     if isinstance(a, list) and isinstance(b, list):
         a.sort()
         b.sort()
+    '''
 
         
     if a == b:
