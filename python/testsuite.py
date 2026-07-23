@@ -48,6 +48,9 @@ def print_linked_list(l):
         curr = curr.nxt
     print(" ")
 
+def int_to_binary_str(x, n_padded_zeros = 0):
+    return f"{x:0{n_padded_zeros}b}"
+
 
 # Test functions
 def assert_eq(a, b):
