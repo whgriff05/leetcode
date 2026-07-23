@@ -66,12 +66,10 @@ def assert_eq(a, b):
         a = alist
         b = blist
 
-    '''Confused why this was here
     # Comparing Lists
     if isinstance(a, list) and isinstance(b, list):
         a.sort()
         b.sort()
-    '''
 
         
     if a == b:
