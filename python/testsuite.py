@@ -53,7 +53,7 @@ def int_to_binary_str(x, n_padded_zeros = 0):
 
 
 # Test functions
-def assert_eq(a, b):
+def assert_eq(a, b, **kwargs):
     # Comparing Linked Lists
     if isinstance(a, ListNode) and isinstance(b, ListNode):
         alist = []
@@ -70,7 +70,7 @@ def assert_eq(a, b):
         b = blist
 
     # Comparing Lists
-    if isinstance(a, list) and isinstance(b, list):
+    if isinstance(a, list) and isinstance(b, list) and kwargs.get("sort_lists", True):
         a.sort()
         b.sort()
 
@@ -80,8 +80,8 @@ def assert_eq(a, b):
     else:
         return False
 
-def lc_test(n, a, b):
-    if assert_eq(a, b):
+def lc_test(n, a, b, **kwargs):
+    if assert_eq(a, b, **kwargs):
         print(f"Test {n}: Passed")
     else:
         print(f"Test {n}: Failed | Expected {b}, received {a}")
