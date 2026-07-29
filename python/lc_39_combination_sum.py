@@ -12,6 +12,7 @@ def combinationSum(candidates, target):
         current_path.append(candidates[i])
         backtrack(i, current_path, remaining_target - candidates[i])
 
+        print(current_path)
         current_path.pop()
         backtrack(i+1, current_path, remaining_target)
 
